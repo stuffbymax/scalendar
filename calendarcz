@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Funkce pro zobrazení informací
+function display_name() {
+  clear
+  echo -e "\e[1;34mVytvořil stuffbymax\e[0m"
+  echo "---------------------"
+}
+
+# Funkce pro zobrazení kalendáře pro konkrétní měsíc a rok
+function zobrazit_kalendar() {
+    mesic=$1
+    rok=$2
+    cal $mesic $rok
+}
+
+# Hlavní funkce
+function hlavni() {
+    # Získání aktuálního měsíce a roku
+    aktualni_mesic=$(date +'%m')
+    aktualni_rok=$(date +'%Y')
+
+    echo -e "\e[1;32mKalendář pro $(date +'%B %Y')"
+    echo -e "-----------------------------\e[0m"
+    zobrazit_kalendar $aktualni_mesic $aktualni_rok
+}
+
+# Volání hlavní funkce
+display_name
+hlavni

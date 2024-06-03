@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Function to display help information
+function display_name() {
+  clear
+  echo -e "\e[1;34mMade by stuffbymax\e[0m"
+  echo "------------------"
+}
+
+# Function to display the calendar for a specific month and year
+function show_calendar() {
+    month=$1
+    year=$2
+    cal $month $year
+}
+
+# Main function
+function main() {
+    # Get current month and year
+    current_month=$(date +'%m')
+    current_year=$(date +'%Y')
+
+    echo -e "\e[1;32mCalendar for $(date +'%B %Y')"
+    echo -e "-----------------------------\e[0m"
+    show_calendar $current_month $current_year
+}
+
+# Call main function
+display_name
+main
